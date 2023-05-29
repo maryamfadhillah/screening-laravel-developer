@@ -20,7 +20,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.ui.touch-punch.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/convertPointFromPageToNode.js') }}"></script>
-    
+
     @stack('styles')
 
 </head>
@@ -32,25 +32,45 @@
             <nav class="navbar navbar-expand-lg center-nav transparent navbar-light caret-none" style="height: 80px">
                 <div class="container flex-lg-row flex-nowrap align-items-center">
                     <div class="navbar-brand w-100">
-                        <a href="/">
-                            <img src="{{ asset('assets/img/logo-idw.svg') }}" alt="" />
-                        </a>
+                        <h1>MIAW</h1>
+                    </div>
+                    <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+                        <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                            <ul class="navbar-nav">
+                                @if (Auth::check())
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                </li>
+                                @endif
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('homepage') }}">Homepage</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Testimonials</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.offcanvas-body -->
                     </div>
                     <div class="navbar-other w-100 d-flex ms-auto">
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
-                          @if (Auth::check())
-                          <li class="nav-item dropdown language-select text-uppercase">
-                            <a class="btn btn-primary rounded-pill dropdown-item dropdown-toggle" role="button"
-                              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                class="uil uil-user pe-1"></i>{{ Auth::user()->username }}</a>
-                            <ul class="dropdown-menu">
-                              <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
-                            </ul>
-                          </li>
-                          @endif
+                            @if (Auth::check())
+                                <li class="nav-item dropdown language-select text-uppercase">
+                                    <a class="btn btn-primary rounded-pill dropdown-item dropdown-toggle" role="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                            class="uil uil-user pe-1"></i>{{ Auth::user()->username }}</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a class="dropdown-item"
+                                                href="{{ route('logout') }}">Logout</a></li>
+                                    </ul>
+                                </li>
+                            @endif
                         </ul>
                         <!-- /.navbar-nav -->
-                      </div>
+                    </div>
                     <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.container -->

@@ -24,8 +24,8 @@
             <div class="row">
                 <div class="col-lg col-xl mx-auto">
                     <div class="col-lg-8 mx-auto mb-6">
-                        <h1 class="display-1 mb-3">IDW</h1>
-                        <a class="display-5 text-gradient gradient-7">Interaktif Digital Worksheet</a>
+                        <h1 class="display-1 mb-3">MIAW</h1>
+                        <a class="mb-3 text-gradient gradient-7">Toko Perawatan dan Perlengkapan Kucing</a>
                     </div>
                 </div>
                 <!-- /column -->
@@ -35,7 +35,7 @@
                 <div class="col-lg-7 col-xl-6 col-xxl-5 mx-auto ">
                     <div class="card">
                         <div class="card-body p-11 text-center">
-                            <h2 class="mb-3 text-start">Registrasi Akun Guru</h2>
+                            <h2 class="mb-3 text-start">Registrasi Akun Admin</h2>
                             <p class="lead mb-6 text-start">Daftarkan username, password, dan kelas.</p>
                             @if ($errors->any())
                             @foreach ($errors->all() as $error)

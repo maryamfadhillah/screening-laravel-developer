@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\HomeController;
 use App\Models\Feature;
 
 /*
@@ -18,9 +19,7 @@ use App\Models\Feature;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
 /*
 |--------------------------------------------------------------------------
