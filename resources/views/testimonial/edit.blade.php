@@ -8,11 +8,9 @@
         <div class="widget pb-3">
           <nav id="collapse-usage">
             <ul class="list-unstyled fs-sm lh-sm text-reset">
-              <li><a href="../docs/index.html">Dashboard</a></li>
-              <li><a href="../docs/index.html" class="active">Testimonial</a></li>
-              <li><a href="../docs/faq.html">Post</a></li>
-              <li><a href="../docs/forms.html">Teams</a></li>
-              <li><a href="../docs/changelog.html">Contact</a></li>
+              <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+              <li><a href="{{ route('admin.testimonial.index') }}" class="active">Testimonial</a></li>
+              <li><a href="{{ route('admin.service.index') }}">Service</a></li>
             </ul>
           </nav>
           <!-- /nav -->

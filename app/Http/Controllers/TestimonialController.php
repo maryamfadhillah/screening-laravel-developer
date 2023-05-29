@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
-class TestimonialsController extends Controller
+class TestimonialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -74,10 +74,10 @@ class TestimonialsController extends Controller
         ]);
 
         $testimonial->update($request->all());
-        // Testimonial::update([
-        //     'name'      => $request->input('name'),
-        //     'desc'      => $request->input('desc'),
-        // ]);
+        Testimonial::update([
+            'name'      => $request->input('name'),
+            'desc'      => $request->input('desc'),
+        ]);
 
         return redirect()->route('admin.testimonial.index');
 

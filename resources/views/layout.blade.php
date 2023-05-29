@@ -47,13 +47,6 @@
                               <li class="nav-item"><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                             </ul>
                           </li>
-                          @else
-                          <li class="nav-item">
-                            <nav class="nav justify-content-end text-end">
-                              <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-                            </nav>
-                            <!-- /.social -->
-                          </li>
                           @endif
                         </ul>
                         <!-- /.navbar-nav -->
@@ -74,8 +67,7 @@
     <footer class="bg-light">
         <div class="container pb-10 pb-md-10">
             <div class="col-md col-lg-5">
-                <a href="">IDW</a> &copy; 2022 is crafted by <a href="https://rootlabs.id"
-                    target="_blank">Rootlabs Indonesia</a>
+                <a href="">Maryam Fadhillah - Screening Laravel Developer</a>
             </div>
         </div>
         <!--/.row -->

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\FeatureController;
-use App\Http\Controllers\TestimonialsController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TestimonialController;
 use App\Models\Feature;
 
 /*
@@ -53,6 +53,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     })->name('dashboard');
 
     Route::resource('testimonial', TestimonialController::class);
+
+    Route::resource('service', ServiceController::class);
     
     // Route::get('/', [FeatureController::class, 'index'])->name('dashboard');
     // Route::get('view/{id}', [FeatureController::class, 'view'])->name('view');

@@ -1,4 +1,4 @@
-@section('title', 'Testimonial')
+@section('title', 'Service')
 @extends('layout')
 @section('content')  
 
@@ -9,8 +9,8 @@
           <nav id="collapse-usage">
             <ul class="list-unstyled fs-sm lh-sm text-reset">
               <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-              <li><a href="{{ route('admin.testimonial.index') }}" class="active">Testimonial</a></li>
-              <li><a href="{{ route('admin.service.index') }}">Service</a></li>
+              <li><a href="{{ route('admin.testimonial.index') }}">Testimonial</a></li>
+              <li><a href="{{ route('admin.service.index') }}" class="active">Service</a></li>
             </ul>
           </nav>
           <!-- /nav -->
@@ -20,22 +20,27 @@
       <!-- /column -->
       <div class="col-xl-10 order-xl-2">
         <section id="snippet-1" class="wrapper py-5">
-          <h2 class="mb-5">New Testimonial</h2>
+          <h2 class="mb-5">New Service</h2>
           <div class="card">
             <div class="card-body">
 
-              <form action="{{ route('admin.testimonial.store') }}" method="POST">
-                @method('POST')
+              <form action="{{ route('admin.service.update', $service->id) }}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
                 
                 <div class="form-floating mb-4">
-                  <input id="textInputExample" type="text" class="form-control" placeholder="Name" name="name" required>
-                  <label for="textInputExample">Name</label>
+                  <input id="textInputExample" type="text" class="form-control" placeholder="Title" name="title" value="{{ $service->title }}" required>
+                  <label for="textInputExample">Title</label>
                 </div>
   
                 <div class="form-floating mb-4">
-                  <input id="textInputExample" type="text" class="form-control" placeholder="Description" name="desc" required>
+                  <input id="textInputExample" type="text" class="form-control" placeholder="Description" name="desc" value="{{ $service->desc }}" required>
                   <label for="textInputExample">Description</label>
+                </div>
+
+                <div class="mb-4">
+                  <label for="formFile" class="form-label text-dark">Upload Foto Layanan</label>
+                  <input class="form-control" type="file" id="formFile" name="image" value="{{ $service->image }}">
                 </div>
 
                 <button class="btn btn-primary rounded-pill" type="submit">Submit</button>
