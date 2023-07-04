@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Feature;
 use GuzzleHttp\Middleware;
 
@@ -52,9 +54,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         return view('dashboard');
     })->name('dashboard');
 
+    Route::post('token', function (Request $request) {
+        $token = $request->user()->createToken(Str::random(10));
+ 
+        return ['token' => $token->plainTextToken];
+    })->name('token');
+
     Route::resource('testimonial', TestimonialController::class);
 
     Route::resource('service', ServiceController::class);
-    
+
 });
 

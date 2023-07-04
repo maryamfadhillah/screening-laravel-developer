@@ -30,6 +30,13 @@
                   <p><strong>Lihat Portofolio Maryam lainnya...</strong></p>
                   <p>Ini adalah website portofolio yang dibuat untuk lamaran pekerjaan di PT Daya Rekadigital Indonesia sebagai Laravel Developer</p>
                   <a href="https://github.com/maryamfadhillah" class="btn btn-primary rounded-pill me-2" target="_blank">Github</a>
+                  
+                  <form class="py-3" action="{{ route('admin.token') }}" method="POST">
+                    @method('POST')
+                    @csrf
+                    <button class="btn btn-secondary" type="submit">Generate Token</button>
+                  </form>
+                  
                 </div>
                 <!--/.card-body -->
               </div>
