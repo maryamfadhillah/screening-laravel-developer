@@ -7,6 +7,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\HomeController;
 use App\Models\Feature;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,7 @@ Route::get('/logout', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], function () {
     
     Route::get('/', function () {
         return view('dashboard');
@@ -55,9 +56,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::resource('service', ServiceController::class);
     
-    // Route::get('/', [FeatureController::class, 'index'])->name('dashboard');
-    // Route::get('view/{id}', [FeatureController::class, 'view'])->name('view');
-    
-    // Route::resource('features', FeatureController::class);
 });
 
