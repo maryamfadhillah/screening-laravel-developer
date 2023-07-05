@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -24,8 +25,10 @@ class AuthController extends Controller
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials))
         {
+        $request->user()->createToken($request->input('username'));
         return redirect('admin');
         }
+
 
         return redirect('login')->with('error', 'Username atau password salah.');
     }

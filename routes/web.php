@@ -54,11 +54,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'auth'], fu
         return view('dashboard');
     })->name('dashboard');
 
-    Route::post('token', function (Request $request) {
-        $token = $request->user()->createToken(Str::random(10));
+    // Route::post('token', function (Request $request) {
+    //     $token = $request->user()->createToken(Str::random(10));
  
-        return ['token' => $token->plainTextToken];
-    })->name('token');
+    //     return ['token' => $token->plainTextToken];
+    // })->name('token');
 
     Route::resource('testimonial', TestimonialController::class);
 
